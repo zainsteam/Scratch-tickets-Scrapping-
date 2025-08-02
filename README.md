@@ -1,61 +1,236 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Lottery Ticket Scraping & Analysis System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive Laravel-based system for scraping, analyzing, and ranking lottery tickets from multiple state lottery websites with advanced filtering and export capabilities.
 
-## About Laravel
+## 🎯 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Core Functionality
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Multi-State Lottery Scraping**: Supports DC Lottery, Maryland Lottery, Virginia Lottery
+-   **Real-time Data Extraction**: Ticket prices, prizes, dates, ROI calculations
+-   **Advanced Ranking System**: Multiple ranking criteria with tie-breaking logic
+-   **Excel Export**: Multi-sheet exports with detailed ticket information
+-   **Expired Ticket Filtering**: Automatically excludes tickets past their claim date
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Ranking Algorithms
 
-## Learning Laravel
+#### 🥇 Top 10 ROI Rankings
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Sorts tickets by current ROI (highest to lowest)
+-   Real-time profitability analysis
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### 🆕 Newly Released Tickets
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Filters tickets released in current month
+-   Sorted by current ROI for best new opportunities
 
-## Laravel Sponsors
+#### 💰 Grand Prize Rankings (3-Level Sorting)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Primary**: Top grand prize (highest to lowest)
+2. **Secondary**: Ticket cost (highest to lowest) - for same grand prizes
+3. **Tertiary**: Grand prizes remaining % (highest to lowest) - for same grand prizes and costs
 
-### Premium Partners
+### Data Extraction Capabilities
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   **Ticket Information**: Title, price, game number, start/end dates
+-   **Prize Structure**: Top grand prize, initial grand prize, current grand prize
+-   **Financial Metrics**: Initial ROI, current ROI, score calculations
+-   **Availability**: Grand prize remaining percentage
+-   **Visual Assets**: Ticket images and URLs
 
-## Contributing
+## 🚀 API Endpoints
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Get All Tickets Data
 
-## Code of Conduct
+```
+GET /api/tickets
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Returns comprehensive ticket data with all rankings and metrics.
 
-## Security Vulnerabilities
+### Get Single Ticket
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+GET /api/ticket/{url}
+```
 
-## License
+Returns detailed information for a specific ticket URL.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Export Excel File
+
+```
+GET /api/export
+```
+
+Downloads multi-sheet Excel file with:
+
+-   Overall tickets sheet
+-   Ticket details sheet
+-   Grand prize rankings sheet
+-   Tickets by price sheets
+
+## 📊 Excel Export Sheets
+
+### 1. Overall Tickets Sheet
+
+Complete ticket listing with all metrics and rankings.
+
+### 2. Ticket Details Sheet
+
+Detailed breakdown of individual ticket information.
+
+### 3. Grand Prize Rankings Sheet
+
+Dedicated sheet showing only grand prize tickets ranked by the 3-level sorting system.
+
+### 4. Tickets by Price Sheets
+
+Individual sheets for each ticket price point with detailed analysis.
+
+## 🔧 Technical Architecture
+
+### Services
+
+-   **UniversalScrapingService**: Handles HTTP requests with retry logic and timeouts
+-   **ScraperFactory**: Factory pattern for different lottery site scrapers
+-   **BaseScraper**: Abstract base class for scraper implementations
+-   **DCLotteryScraper**: DC Lottery specific scraping logic
+
+### Key Components
+
+-   **HTTP Client**: Robust request handling with 30s timeout, 3 retries
+-   **DOM Crawler**: Symfony DomCrawler for HTML parsing
+-   **Date Handling**: Carbon for date parsing and comparisons
+-   **Collection Processing**: Laravel Collections for data manipulation
+-   **Error Handling**: Comprehensive exception handling and logging
+
+### Data Processing Pipeline
+
+1. **Scraping**: Parallel HTTP requests to lottery sites
+2. **Parsing**: HTML extraction using CSS selectors
+3. **Calculation**: ROI, scores, and financial metrics
+4. **Filtering**: Remove expired tickets and invalid data
+5. **Ranking**: Apply multi-level sorting algorithms
+6. **Export**: Generate Excel files with multiple sheets
+
+## 🛠 Installation & Setup
+
+### Prerequisites
+
+-   PHP 8.1+
+-   Laravel 10+
+-   Composer
+-   Node.js (for Vite)
+
+### Installation Steps
+
+```bash
+# Clone repository
+git clone <repository-url>
+cd myproject
+
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+npm install
+
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Run migrations
+php artisan migrate
+
+# Start development server
+php artisan serve
+```
+
+### Environment Configuration
+
+```env
+APP_NAME="Lottery Scraping System"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+```
+
+## 📈 Recent Updates
+
+### Latest Features (v2.0)
+
+-   ✅ **3-Level Grand Prize Ranking**: Enhanced sorting with tie-breaking logic
+-   ✅ **Expired Ticket Filtering**: Automatic exclusion of past-due tickets
+-   ✅ **Grand Prize Sheet**: Dedicated Excel export for grand prize tickets
+-   ✅ **Robust HTTP Client**: Improved error handling and retry mechanisms
+-   ✅ **Enhanced Debugging**: Comprehensive logging for troubleshooting
+-   ✅ **Table Scraping Fix**: First table only extraction for accurate data
+
+### Technical Improvements
+
+-   **Error Handling**: Fixed `ConnectionException::effectiveUri()` issues
+-   **HTTP Stability**: Added timeouts, retries, and User-Agent headers
+-   **Data Accuracy**: Improved table extraction and date parsing
+-   **Performance**: Optimized collection processing and sorting algorithms
+
+## 🔍 Debugging & Logging
+
+The system includes comprehensive logging for troubleshooting:
+
+```php
+// Debug logs available for:
+- Grand prize ranking calculations
+- Ticket filtering and sorting
+- HTTP request responses
+- Excel export data
+- Collection processing steps
+```
+
+Logs are stored in `storage/logs/laravel.log`
+
+## 📋 Usage Examples
+
+### Get All Tickets
+
+```bash
+curl http://localhost:8000/api/tickets
+```
+
+### Export Excel File
+
+```bash
+curl -O -J http://localhost:8000/api/export
+```
+
+### Get Single Ticket
+
+```bash
+curl http://localhost:8000/api/ticket/https://dclottery.com/dc-scratchers/300x
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For issues and questions:
+
+-   Check the logs in `storage/logs/laravel.log`
+-   Review the API documentation above
+-   Ensure all dependencies are installed
+-   Verify environment configuration
+
+---
+
+**Built with Laravel 10** - A modern PHP framework for web artisans.
