@@ -54,7 +54,21 @@ class DCLotteryScraper implements BaseScraper
                     $remaining = (int) filter_var($cells->eq(3)->text(), FILTER_SANITIZE_NUMBER_INT);
                     
                     $initialPrizes += $total;
-                    $column1 = ($remaining >= 3 || $remaining === $total) ? $amount * $remaining : 0;
+                    
+                    // Calculate column1 based on Excel formula
+                    $ratio = $total > 0 ? $remaining / $total : 0;
+                    
+                    // Excel formula: IF(OR(E29>2,E29=C29,E29÷C29>0.5),B29×E29,IF(OR(E29=1,E29=2,E29÷C29<0.5),0,B29×E29))
+                    if ($remaining > 2 || $remaining === $total || $ratio > 0.5) {
+                        // First condition: amount × remaining
+                        $column1 = $amount * $remaining;
+                    } elseif ($remaining === 1 || $remaining === 2 || $ratio < 0.5) {
+                        // Second condition: 0
+                        $column1 = 0;
+                    } else {
+                        // Else: amount × remaining
+                        $column1 = $amount * $remaining;
+                    }
                     
                     $prizes[] = [
                         'amount' => $amountText,
@@ -118,7 +132,7 @@ class DCLotteryScraper implements BaseScraper
             $left = floatval($left);
             $right = floatval(str_replace(',', '', $right));
             if ($left > 0 && $right > 0) {
-                $probability = (($left / $right) * 100);
+                $probability = ($right > 0) ? (($left / $right) * 100) : 0;
             }
         }
         

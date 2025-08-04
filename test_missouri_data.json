@@ -1,0 +1,60 @@
+{
+  "title": "Missouri Test Game",
+  "image": "https://www.molottery.com/sites/default/files/game-image.jpg",
+  "price": "5.00",
+  "game_no": "430",
+  "start_date": "01/01/2024",
+  "end_date": "12/31/2024",
+  "prizes": [
+    {
+      "amount": "10,000",
+      "total": 1,
+      "paid": 0,
+      "remaining": 1
+    },
+    {
+      "amount": "1,000",
+      "total": 5,
+      "paid": 2,
+      "remaining": 3
+    },
+    {
+      "amount": "500",
+      "total": 10,
+      "paid": 4,
+      "remaining": 6
+    },
+    {
+      "amount": "100",
+      "total": 50,
+      "paid": 20,
+      "remaining": 30
+    },
+    {
+      "amount": "50",
+      "total": 100,
+      "paid": 40,
+      "remaining": 60
+    },
+    {
+      "amount": "25",
+      "total": 200,
+      "paid": 80,
+      "remaining": 120
+    },
+    {
+      "amount": "10",
+      "total": 500,
+      "paid": 200,
+      "remaining": 300
+    },
+    {
+      "amount": "5",
+      "total": 1000,
+      "paid": 400,
+      "remaining": 600
+    }
+  ],
+  "url": "https://www.molottery.com/scratchers/430",
+  "state": "Missouri Lottery"
+} 

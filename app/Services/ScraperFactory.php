@@ -6,6 +6,19 @@ use App\Services\Scrapers\BaseScraper;
 use App\Services\Scrapers\DCLotteryScraper;
 use App\Services\Scrapers\MarylandLotteryScraper;
 use App\Services\Scrapers\VirginiaLotteryScraper;
+use App\Services\Scrapers\ArkansasLotteryScraper;
+use App\Services\Scrapers\CaliforniaLotteryScraper;
+use App\Services\Scrapers\ConnecticutLotteryScraper;
+use App\Services\Scrapers\IndianaLotteryScraper;
+use App\Services\Scrapers\KansasLotteryScraper;
+use App\Services\Scrapers\KentuckyLotteryScraper;
+use App\Services\Scrapers\LouisianaLotteryScraper;
+use App\Services\Scrapers\MississippiLotteryScraper;
+use App\Services\Scrapers\NewJerseyLotteryScraper;
+use App\Services\Scrapers\NorthCarolinaLotteryScraper;
+use App\Services\Scrapers\SouthCarolinaLotteryScraper;
+use App\Services\Scrapers\TexasLotteryScraper;
+use App\Services\Scrapers\WestVirginiaLotteryScraper;
 use InvalidArgumentException;
 
 class ScraperFactory
@@ -19,7 +32,19 @@ class ScraperFactory
             new DCLotteryScraper(),
             new MarylandLotteryScraper(),
             new VirginiaLotteryScraper(),
-            // Add more scrapers here as needed
+            new ArkansasLotteryScraper(),
+            new CaliforniaLotteryScraper(),
+            new ConnecticutLotteryScraper(),
+            new IndianaLotteryScraper(),
+            new KansasLotteryScraper(),
+            new KentuckyLotteryScraper(),
+            new LouisianaLotteryScraper(),
+            new MississippiLotteryScraper(),
+            new NewJerseyLotteryScraper(),
+            new NorthCarolinaLotteryScraper(),
+            new SouthCarolinaLotteryScraper(),
+            new TexasLotteryScraper(),
+            new WestVirginiaLotteryScraper(),
         ];
     }
     

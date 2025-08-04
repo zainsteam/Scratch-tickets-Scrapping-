@@ -66,9 +66,7 @@ class VirginiaLotteryScraper implements BaseScraper
             [$left, $right] = explode(':', $oddsText);
             $left = floatval($left);
             $right = floatval(str_replace(',', '', $right));
-            if ($left > 0 && $right > 0) {
-                $probability = (($left / $right) * 100);
-            }
+            $probability = ($right > 0) ? (($left / $right) * 100) : 0;
         }
         
         return [

@@ -12,6 +12,51 @@ return [
     */
 
     'sites' => [
+        'arkansaslottery' => [
+            'name' => 'Arkansas Lottery',
+            'domain' => 'myarkansaslottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'calottery' => [
+            'name' => 'California Lottery',
+            'domain' => 'calottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'ctlottery' => [
+            'name' => 'Connecticut Lottery',
+            'domain' => 'ctlottery.org',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
         'dclottery' => [
             'name' => 'DC Lottery',
             'domain' => 'dclottery.com',
@@ -25,17 +70,138 @@ return [
             'fields' => ['Price', 'Game No', 'Start Date', 'Odds', 'Top Prize Odds'],
         ],
         
-        'mdlottery' => [
-            'name' => 'Maryland Lottery',
-            'domain' => 'mdlottery.com',
+        'hoosierlottery' => [
+            'name' => 'Indiana Lottery',
+            'domain' => 'hoosierlottery.com',
             'selectors' => [
-                'title' => '.game-title h2',
-                'image' => '.game-image img',
-                'price' => '.game-price .value',
-                'game_no' => '.game-number .value',
-                'start_date' => '.game-date .value',
-                'prize_table' => '.prize-table tr',
-                'odds' => '.odds-info .value',
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'kslottery' => [
+            'name' => 'Kansas Lottery',
+            'domain' => 'kslottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'kylottery' => [
+            'name' => 'Kentucky Lottery',
+            'domain' => 'kylottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'louisianalottery' => [
+            'name' => 'Louisiana Lottery',
+            'domain' => 'louisianalottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'mslotteryhome' => [
+            'name' => 'Mississippi Lottery',
+            'domain' => 'mslotteryhome.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'njlottery' => [
+            'name' => 'New Jersey Lottery',
+            'domain' => 'njlottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'nclottery' => [
+            'name' => 'North Carolina Lottery',
+            'domain' => 'nclottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'sceducationlottery' => [
+            'name' => 'South Carolina Lottery',
+            'domain' => 'sceducationlottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
+            ],
+        ],
+        
+        'texaslottery' => [
+            'name' => 'Texas Lottery',
+            'domain' => 'texaslottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
             ],
         ],
         
@@ -50,6 +216,21 @@ return [
                 'start_date' => '.release-date',
                 'prize_table' => '.prize-breakdown tr',
                 'odds' => '.winning-odds',
+            ],
+        ],
+        
+        'wvlottery' => [
+            'name' => 'West Virginia Lottery',
+            'domain' => 'wvlottery.com',
+            'selectors' => [
+                'title' => 'h1, .game-title, .ticket-title',
+                'image' => '.ticket-image img, .game-image img',
+                'price' => '.price, .ticket-price, .game-price',
+                'game_no' => '.game-number, .ticket-number',
+                'start_date' => '.start-date, .release-date',
+                'end_date' => '.end-date, .claim-deadline',
+                'prize_table' => 'table tbody tr',
+                'odds' => '.overall-odds, .total-odds',
             ],
         ],
     ],
