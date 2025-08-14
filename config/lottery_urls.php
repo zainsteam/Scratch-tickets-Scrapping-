@@ -18,7 +18,8 @@ return [
             'domains' => ['myarkansaslottery.com', 'www.myarkansaslottery.com'],
             'urls' => [
                 'games_list' => 'https://www.myarkansaslottery.com/games/scratch-off-games',
-                'game_detail_pattern' => 'https://www.myarkansaslottery.com/games/scratch-off-games/{game_id}',
+                // Use generic games path to cover all scratch-off routes
+                'game_detail_pattern' => 'https://www.myarkansaslottery.com/games/{game_id}',
                 'api_endpoint' => 'https://www.myarkansaslottery.com/api/games',
             ],
             'active' => true,
@@ -29,8 +30,8 @@ return [
             'base_url' => 'https://www.calottery.com',
             'domains' => ['calottery.com', 'www.calottery.com'],
             'urls' => [
-                'games_list' => 'https://www.calottery.com/Scratchers',
-                'game_detail_pattern' => 'https://www.calottery.com/Scratchers/{game_id}',
+                'games_list' => 'https://www.calottery.com/scratchers',
+                'game_detail_pattern' => 'https://www.calottery.com/scratchers/{game_id}',
                 'api_endpoint' => 'https://www.calottery.com/api/games',
             ],
             'active' => true,
@@ -41,8 +42,8 @@ return [
             'base_url' => 'https://www.ctlottery.org',
             'domains' => ['ctlottery.org', 'www.ctlottery.org'],
             'urls' => [
-                'games_list' => 'https://www.ctlottery.org/Scratch-Games',
-                'game_detail_pattern' => 'https://www.ctlottery.org/Scratch-Games/{game_id}',
+                'games_list' => 'https://www.ctlottery.org/ScratchGames',
+                'game_detail_pattern' => 'https://www.ctlottery.org/ScratchGames/{game_id}',
                 'api_endpoint' => 'https://www.ctlottery.org/api/games',
             ],
             'active' => true,
@@ -65,9 +66,9 @@ return [
             'base_url' => 'https://www.hoosierlottery.com',
             'domains' => ['hoosierlottery.com', 'www.hoosierlottery.com'],
             'urls' => [
-                'games_list' => 'https://www.hoosierlottery.com/games/scratch-off-games',
-                'game_detail_pattern' => 'https://www.hoosierlottery.com/games/scratch-off-games/{game_id}',
-                'api_endpoint' => 'https://www.hoosierlottery.com/api/games',
+                'games_list' => 'https://hoosierlottery.com/games/scratch-off',
+                'game_detail_pattern' => 'https://hoosierlottery.com/games/scratch-off/{game_id}',
+                'api_endpoint' => 'https://hoosierlottery.com/api/games',
             ],
             'active' => true,
         ],
@@ -101,8 +102,8 @@ return [
             'base_url' => 'https://www.louisianalottery.com',
             'domains' => ['louisianalottery.com', 'www.louisianalottery.com'],
             'urls' => [
-                'games_list' => 'https://www.louisianalottery.com/games/scratch-off-games',
-                'game_detail_pattern' => 'https://www.louisianalottery.com/games/scratch-off-games/{game_id}',
+                'games_list' => 'https://www.louisianalottery.com/scratch-offs',
+                'game_detail_pattern' => 'https://www.louisianalottery.com/game/{game_id}',
                 'api_endpoint' => 'https://www.louisianalottery.com/api/games',
             ],
             'active' => true,
@@ -125,8 +126,9 @@ return [
             'base_url' => 'https://www.njlottery.com',
             'domains' => ['njlottery.com', 'www.njlottery.com'],
             'urls' => [
-                'games_list' => 'https://www.njlottery.com/games/scratch-off-games',
-                'game_detail_pattern' => 'https://www.njlottery.com/games/scratch-off-games/{game_id}',
+                // Matches controller/live usage: https://www.njlottery.com/en-us/scratch-offs/{game_id}.html
+                'games_list' => 'https://www.njlottery.com/en-us/scratch-offs',
+                'game_detail_pattern' => 'https://www.njlottery.com/en-us/scratch-offs/{game_id}.html',
                 'api_endpoint' => 'https://www.njlottery.com/api/games',
             ],
             'active' => true,
