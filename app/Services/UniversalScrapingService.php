@@ -26,7 +26,7 @@ class UniversalScrapingService
             $scraper = $this->scraperFactory->getScraper($url);
             
             // Fetch the page with timeout and retry
-            $response = Http::timeout(30)
+            $response = Http::timeout(60)
                 ->retry(3, 1000)
                 ->withHeaders([
                     'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -104,7 +104,8 @@ class UniversalScrapingService
             // Use Http::pool with a callable that returns the requests
             $responses = Http::pool(function ($pool) use ($chunk) {
                 foreach ($chunk as $url) {
-                    $pool->timeout(30)
+                    $pool->timeout(60)
+                        ->connectTimeout(20)
                         ->retry(3, 1000)
                         ->withHeaders([
                             'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',

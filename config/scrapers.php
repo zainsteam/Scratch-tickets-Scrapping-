@@ -247,7 +247,7 @@ return [
     'settings' => [
         'concurrency' => 10,
         'delay_between_requests' => 100000, // microseconds
-        'timeout' => 30, // seconds
+        'timeout' => 60, // seconds
         'retry_attempts' => 3,
         'user_agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     ],
