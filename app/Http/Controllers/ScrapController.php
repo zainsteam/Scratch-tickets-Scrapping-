@@ -1876,6 +1876,85 @@ class ScrapController extends Controller
                     'https://www.mdlottery.com/games/scratch-off-games/md-009',
                     'https://www.mdlottery.com/games/scratch-off-games/md-010',
                 ];
+            case 'north_carolina':
+                return [
+                    'https://nclottery.com/scratch-off/936/2000-loaded',    
+                    'https://nclottery.com/scratch-off/935/500-loaded',
+                    'https://nclottery.com/scratch-off/934/100-loaded',
+                    'https://nclottery.com/scratch-off/933/50-loaded',
+                    'https://nclottery.com/scratch-off/872/20x-the-cash',
+                    'https://nclottery.com/scratch-off/871/15x-cashword',
+                    'https://nclottery.com/scratch-off/907/nutcracker-cash',
+                    'https://nclottery.com/scratch-off/878/double-match',
+                    'https://nclottery.com/scratch-off/870/10x-the-cash',
+                    'https://nclottery.com/scratch-off/882/100-in-a-flash',
+                    'https://nclottery.com/scratch-off/730/junior-big-ol-bucks',
+                    'https://nclottery.com/scratch-off/897/double-it',
+                    'https://nclottery.com/scratch-off/875/vip-platinum',
+                    'https://nclottery.com/scratch-off/898/lucky-7s-cashword',
+                    'https://nclottery.com/scratch-off/913/10-million-spectacular',
+                    'https://nclottery.com/scratch-off/917/2000000-diamond-deluxe',
+                    'https://nclottery.com/scratch-off/876/5000000-ultimate',
+                    'https://nclottery.com/scratch-off/952/millionaire-bucks',
+                    'https://nclottery.com/scratch-off/925/200x-the-cash',
+                    'https://nclottery.com/scratch-off/774/millionaire-maker',
+                    'https://nclottery.com/scratch-off/951/win-big',
+                    'https://nclottery.com/scratch-off/932/instant-millions',
+                    'https://nclottery.com/scratch-off/904/power-20s',
+                    'https://nclottery.com/scratch-off/948/jumbo-bucks',
+                    'https://nclottery.com/scratch-off/830/scorching-hot-7s',
+                    'https://nclottery.com/scratch-off/943/1000000-cashword',
+                    'https://nclottery.com/scratch-off/944/50000-payout',
+                    'https://nclottery.com/scratch-off/940/supreme-7s',
+                    'https://nclottery.com/scratch-off/892/black-titanium',
+                    'https://nclottery.com/scratch-off/958/merry-multiplier',
+                    'https://nclottery.com/scratch-off/957/holiday-cash-blowout',
+                    'https://nclottery.com/scratch-off/939/80-million-cash-blowout',
+                    'https://nclottery.com/scratch-off/895/80000000-cash-blowout',
+                    'https://nclottery.com/scratch-off/912/emerald-8s',
+                    'https://nclottery.com/scratch-off/868/100x-the-cash',
+                    'https://nclottery.com/scratch-off/896/big-cash-payout',
+                    'https://nclottery.com/scratch-off/928/400000-jackpot',
+                    'https://nclottery.com/scratch-off/805/spectacular-riches',
+                    'https://nclottery.com/scratch-off/884/2000000-riches',
+                    'https://nclottery.com/scratch-off/942/game-of-thrones',
+                    'https://nclottery.com/scratch-off/937/super-loteria',
+                    'https://nclottery.com/scratch-off/718/extreme-cash',
+                    'https://nclottery.com/scratch-off/956/holiday-cash-50x',
+                    'https://nclottery.com/scratch-off/916/money-bag',
+                    'https://nclottery.com/scratch-off/923/bankroll',
+                    'https://nclottery.com/scratch-off/921/20x-the-cash',
+                    'https://nclottery.com/scratch-off/950/cash-plus',
+                    'https://nclottery.com/scratch-off/922/50x-the-cash',
+                    'https://nclottery.com/scratch-off/947/mega-bucks',
+                    'https://nclottery.com/scratch-off/949/xtreme-cashword',
+                    'https://nclottery.com/scratch-off/903/power-cashword',
+                    'https://nclottery.com/scratch-off/846/Platinum',
+                    'https://nclottery.com/scratch-off/900/red-hot-millions',
+                    'https://nclottery.com/scratch-off/929/ultimate-dash',
+                    'https://nclottery.com/scratch-off/888/jumbo-bucks',
+                    'https://nclottery.com/scratch-off/891/multiplier-mania',
+                    'https://nclottery.com/scratch-off/955/holiday-cash-30x',
+                    'https://nclottery.com/scratch-off/826/200x-the-cash',
+                    'https://nclottery.com/scratch-off/924/1-million-loteria',
+                    'https://nclottery.com/scratch-off/954/holiday-cash-20x',
+                    'https://nclottery.com/scratch-off/887/mega-bucks',
+                    'https://nclottery.com/scratch-off/946/junior-big-ol-bucks',
+                    'https://nclottery.com/scratch-off/919/10x-the-cash',
+                    'https://nclottery.com/scratch-off/931/red-hot-slots',
+                    'https://nclottery.com/scratch-off/911/loteria',
+                    'https://nclottery.com/scratch-off/902/power-5s',
+                    'https://nclottery.com/scratch-off/920/15x-cashword',
+                    'https://nclottery.com/scratch-off/930/skee-ball',
+                    'https://nclottery.com/scratch-off/927/payday',
+                    'https://nclottery.com/scratch-off/918/5x-the-cash',
+                    'https://nclottery.com/scratch-off/941/tic-tac-bonus',
+                    'https://nclottery.com/scratch-off/953/holiday-cash-10x',
+                    'https://nclottery.com/scratch-off/938/triple-red-777s',
+                    'https://nclottery.com/scratch-off/914/triple-winning-7s',
+                    'https://nclottery.com/scratch-off/915/pot-of-gold',
+                    'https://nclottery.com/scratch-off/926/lucky-7s',
+                ];
             case 'south_carolina':
                 return [
                     'https://www.sceducationlottery.com/Games/InstantGame?gameId=1423',
@@ -2422,155 +2501,89 @@ class ScrapController extends Controller
     }
 
     private function processAllTickets($results)
-    {
-        $collection = collect($results);
-        
-        // Pre-filter and sort collections once
-        $validTickets = $collection->filter(fn($ticket) => isset($ticket['current_ROI']));
-        
-        // 🥇 Top 10 by ROI
-        $top10 = $validTickets->sortByDesc('current_ROI')->values()->take(10);
+{
+    $collection = collect($results);
 
-        // 🆕 Newly Released This Month
-        $currentMonthStart = Carbon::now()->startOfMonth();
-        $newly = $validTickets
-            ->filter(function ($ticket) use ($currentMonthStart) {
-                if (empty($ticket['start_date'])) {
-                    return false;
-                }
-                try {
-                    $date = Carbon::createFromFormat('m/d/Y', $ticket['start_date']);
-                    return $date->greaterThanOrEqualTo($currentMonthStart);
-                } catch (\Exception $e) {
-                    return false;
-                }
-            })
-            ->sortByDesc('current_ROI')
-            ->values();
+    // Pre-filter and sort collections once
+    $validTickets = $collection->filter(fn($ticket) => isset($ticket['current_ROI']));
 
-        // 💰 Grand Prize (Top 10 by Highest Top Prize)
-        $grand = $collection
-            ->filter(fn($ticket) => isset($ticket['top_grand_prize']))
-            ->sortByDesc(function ($ticket) {
-                // 1st: Sort by top grand prize (highest to lowest)
-                return floatval(preg_replace('/[^0-9.]/', '', $ticket['top_grand_prize']));
-            })
-            ->sortByDesc(function ($ticket) {
-                // 2nd: If grand prizes are same, sort by ticket price (highest to lowest)
-                return floatval(preg_replace('/[^0-9.]/', '', $ticket['price'] ?? '0'));
-            })
-            ->sortByDesc(function ($ticket) {
-                // 3rd: If grand prizes and prices are same, sort by grand prizes remaining % (highest to lowest)
-                return floatval($ticket['grand_prize_left'] ?? 0);
-            })
-            ->values()
-            ->take(10);
-            
-        // Debug: Log all 3 conditions sorting
-        Log::info('All 3 Conditions Debug - Grand Prize + Price + Remaining % Sorting', [
-            'top_10_grand_prizes' => $grand->pluck('top_grand_prize')->toArray(),
-            'top_10_titles' => $grand->pluck('title')->toArray(),
-            'top_10_prices' => $grand->pluck('price')->toArray(),
-            'top_10_remaining' => $grand->pluck('grand_prize_left')->toArray(),
-            '300x_in_top_10' => $grand->contains(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', '300X');
-            }),
-            'money_maker_in_top_10' => $grand->contains(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', 'Money Maker');
-            }),
-            '300x_rank' => $grand->search(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', '300X');
-            }),
-            'money_maker_rank' => $grand->search(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', 'Money Maker');
-            }),
-            'ultimate_riches_rank' => $grand->search(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', 'Ultimate Riches');
-            }),
-            'all_tickets_with_680k' => $collection->filter(fn($ticket) => 
-                isset($ticket['top_grand_prize']) && 
-                $ticket['top_grand_prize'] === '$680,000'
-            )->pluck('title')->toArray(),
-            'total_680k_count' => $collection->filter(fn($ticket) => 
-                isset($ticket['top_grand_prize']) && 
-                $ticket['top_grand_prize'] === '$680,000'
-            )->count()
-        ]);
-            
-        // Debug: Log grand collection details
-        Log::info('Grand Collection Debug', [
-            'total_tickets' => $collection->count(),
-            'tickets_with_grand_prize' => $collection->filter(fn($ticket) => isset($ticket['top_grand_prize']))->count(),
-            'grand_collection_size' => $grand->count(),
-            'grand_collection_titles' => $grand->pluck('title')->toArray(),
-            'grand_collection_prizes' => $grand->pluck('top_grand_prize')->toArray(),
-            '300x_in_grand' => $grand->contains(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', '300X');
-            }),
-            'money_maker_in_grand' => $grand->contains(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', 'Money Maker');
-            }),
-            'all_680k_tickets' => $collection->filter(fn($ticket) => 
-                isset($ticket['top_grand_prize']) && 
-                $ticket['top_grand_prize'] === '$680,000'
-            )->pluck('title')->toArray(),
-            '300x_ticket_data' => $collection->first(function ($ticket) {
-                return str_contains($ticket['title'] ?? '', '300X');
-            })
-        ]);
+    // Exclude ROI > 100 for ranking-related lists
+    $rankingEligible = $validTickets->filter(function ($ticket) {
+        $currentRoi = floatval($ticket['current_ROI'] ?? 0);
+        $initialRoi = floatval($ticket['initial_ROI'] ?? 0);
+        return $currentRoi <= 100 && $initialRoi <= 100;
+    });
 
-        // 🏷 Assign Types and Rankings efficiently
-        // Create lookup arrays for faster searching (filter out null/empty URLs)
-        $top10Urls = $top10->pluck('url')->filter(function($url) {
-            return is_string($url) && !empty($url);
-        })->values()->flip()->toArray();
-        $newlyUrls = $newly->pluck('url')->filter(function($url) {
-            return is_string($url) && !empty($url);
-        })->values()->flip()->toArray();
-        $grandUrls = $grand->pluck('url')->filter(function($url) {
-            return is_string($url) && !empty($url);
-        })->values()->flip()->toArray();
+    // 🥇 Top 10 by ROI (skip ROI > 100 tickets)
+    $top10 = $rankingEligible->sortByDesc('current_ROI')->values()->take(10);
 
-        foreach ($results as &$ticket) {
-            $ticket['type'] = [];
-            $ticket['ranking'] = [];
-
-            // Skip tickets without valid URLs
-            if (empty($ticket['url'])) {
-                continue;
+    // 🆕 Newly Released This Month (skip ROI > 100 tickets)
+    $currentMonthStart = Carbon::now()->startOfMonth();
+    $newly = $rankingEligible
+        ->filter(function ($ticket) use ($currentMonthStart) {
+            if (empty($ticket['start_date'])) {
+                return false;
             }
-
-            // 🎯 Top 10 ROI
-            if (isset($top10Urls[$ticket['url']])) {
-                $ticket['type'][] = 'top 10';
-                $ticket['ranking']['top 10'] = $top10Urls[$ticket['url']] + 1;
+            try {
+                $date = Carbon::createFromFormat('m/d/Y', $ticket['start_date']);
+                return $date->greaterThanOrEqualTo($currentMonthStart);
+            } catch (\Exception $e) {
+                return false;
             }
+        })
+        ->sortByDesc('current_ROI')
+        ->values();
 
-            // 🆕 Newly Released
-            if (isset($newlyUrls[$ticket['url']])) {
-                $ticket['type'][] = 'newly';
-                $ticket['ranking']['newly'] = $newlyUrls[$ticket['url']] + 1;
-            }
+    // 💰 Grand Prize (Top 10 by Highest Top Prize, skip ROI > 100 tickets)
+    $grand = $rankingEligible
+        ->filter(fn($ticket) => isset($ticket['top_grand_prize']))
+        ->sortByDesc(function ($ticket) {
+            return floatval(preg_replace('/[^0-9.]/', '', $ticket['top_grand_prize']));
+        })
+        ->sortByDesc(function ($ticket) {
+            return floatval(preg_replace('/[^0-9.]/', '', $ticket['price'] ?? '0'));
+        })
+        ->sortByDesc(function ($ticket) {
+            return floatval($ticket['grand_prize_left'] ?? 0);
+        })
+        ->values()
+        ->take(10);
 
-            // 💰 Grand Prize
-            if (isset($grandUrls[$ticket['url']])) {
-                $ticket['type'][] = 'grand';
-                $ticket['ranking']['grand'] = $grandUrls[$ticket['url']] + 1;
-                
-                // Debug: Log grand prize ranking for specific tickets
-                if (str_contains($ticket['title'] ?? '', '300X') || str_contains($ticket['title'] ?? '', 'Money Maker')) {
-                    Log::info('Grand Prize Ranking Debug', [
-                        'title' => $ticket['title'],
-                        'grand_ranking' => $ticket['ranking']['grand'],
-                        'grand_type' => in_array('grand', $ticket['type']),
-                        'url' => $ticket['url']
-                    ]);
-                }
-            }
+    // 🏷 Assign Types and Rankings
+    $top10Urls = $top10->pluck('url')->filter()->values()->flip()->toArray();
+    $newlyUrls = $newly->pluck('url')->filter()->values()->flip()->toArray();
+    $grandUrls = $grand->pluck('url')->filter()->values()->flip()->toArray();
+
+    foreach ($results as &$ticket) {
+        $ticket['type'] = [];
+        $ticket['ranking'] = [];
+
+        if (empty($ticket['url'])) {
+            continue;
         }
 
-        return $results;
+        // 🎯 Top 10 ROI
+        if (isset($top10Urls[$ticket['url']])) {
+            $ticket['type'][] = 'top 10';
+            $ticket['ranking']['top 10'] = $top10Urls[$ticket['url']] + 1;
+        }
+
+        // 🆕 Newly Released
+        if (isset($newlyUrls[$ticket['url']])) {
+            $ticket['type'][] = 'newly';
+            $ticket['ranking']['newly'] = $newlyUrls[$ticket['url']] + 1;
+        }
+
+        // 💰 Grand Prize
+        if (isset($grandUrls[$ticket['url']])) {
+            $ticket['type'][] = 'grand';
+            $ticket['ranking']['grand'] = $grandUrls[$ticket['url']] + 1;
+        }
     }
+
+    return $results;
+}
+
 
 
     

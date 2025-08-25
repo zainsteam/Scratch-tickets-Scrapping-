@@ -242,50 +242,69 @@ class LouisianaLotteryScraper implements BaseScraper
     }
 
     public function extractPrizes(Crawler $crawler): array
-    {
-        $prizes = [];
-        
-        try {
-            // Target the Odds & Prizes table with known headers
-            $tables = $crawler->filter('table');
-            $tables->each(function (Crawler $table) use (&$prizes) {
-                $headers = $table->filter('thead th');
-                if ($headers->count() < 5) {
-                    return;
-                }
-                $h0 = trim(strtolower($headers->eq(0)->text('')));
-                $h1 = trim(strtolower($headers->eq(1)->text('')));
-                $h2 = trim(strtolower($headers->eq(2)->text('')));
-                $h3 = trim(strtolower($headers->eq(3)->text('')));
-                $h4 = trim(strtolower($headers->eq(4)->text('')));
-                if (str_contains($h0, 'tier') && str_contains($h1, 'odds') && str_contains($h2, 'total') && str_contains($h3, 'claimed') && str_contains($h4, 'remaining')) {
-                    $table->filter('tbody tr')->each(function (Crawler $row) use (&$prizes) {
-                        $cells = $row->filter('td');
-                        if ($cells->count() >= 5) {
-                            $amountText = trim($cells->eq(0)->text(''));
-                            $totalText = trim($cells->eq(2)->text(''));
-                            $claimedText = trim($cells->eq(3)->text(''));
-                            $remainingText = trim($cells->eq(4)->text(''));
-                            $amount = preg_replace('/[^0-9,]/', '', $amountText);
-                            $total = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $totalText));
-                            $claimed = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $claimedText));
-                            $remaining = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $remainingText));
-                            if ($amount && $total > 0) {
-                                $prizes[] = [
-                                    'amount' => $amount,
-                                    'total' => $total,
-                                    'remaining' => $remaining,
-                                    'paid' => $claimed > 0 ? $claimed : max(0, $total - $remaining),
-                                ];
-                            }
+{
+    $prizes = [];
+    
+    try {
+        // Target the Odds & Prizes table with known headers
+        $tables = $crawler->filter('table');
+        $tables->each(function (Crawler $table) use (&$prizes) {
+            $headers = $table->filter('thead th');
+            if ($headers->count() < 5) {
+                return;
+            }
+            $h0 = trim(strtolower($headers->eq(0)->text('')));
+            $h1 = trim(strtolower($headers->eq(1)->text('')));
+            $h2 = trim(strtolower($headers->eq(2)->text('')));
+            $h3 = trim(strtolower($headers->eq(3)->text('')));
+            $h4 = trim(strtolower($headers->eq(4)->text('')));
+            
+            if (
+                str_contains($h0, 'tier') && 
+                str_contains($h1, 'odds') && 
+                str_contains($h2, 'total') && 
+                str_contains($h3, 'claimed') && 
+                str_contains($h4, 'remaining')
+            ) {
+                $table->filter('tbody tr')->each(function (Crawler $row) use (&$prizes) {
+                    $cells = $row->filter('td');
+                    if ($cells->count() >= 5) {
+                        $amountText    = trim($cells->eq(0)->text(''));
+                        $totalText     = trim($cells->eq(2)->text(''));
+                        $claimedText   = trim($cells->eq(3)->text(''));
+                        $remainingText = trim($cells->eq(4)->text(''));
+
+                        // --- Normalize amount ---
+                        $cleanedAmount = str_replace([',', '$'], '', $amountText);
+                        if (is_numeric($cleanedAmount)) {
+                            $amount = (int)$cleanedAmount;
+                        } else {
+                            $amount = 1; // Replace non-numeric with 1
                         }
-                    });
-                }
-            });
-        } catch (\Exception $e) {
-            Log::error('Failed to extract prizes from Louisiana Lottery: ' . $e->getMessage());
-        }
-        
-        return $prizes;
+
+                        $total     = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $totalText));
+                        $claimed   = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $claimedText));
+                        $remaining = (int) str_replace(',', '', preg_replace('/[^0-9,]/', '', $remainingText));
+
+                        if ($amount && $total > 0) {
+                            $prizes[] = [
+                                'amount'    => $amount,
+                                'total'     => $total,
+                                'remaining' => $remaining,
+                                'paid'      => $claimed > 0 ? $claimed : max(0, $total - $remaining),
+                            ];
+                        }
+                    }
+                });
+            }
+        });
+    } catch (\Exception $e) {
+        Log::error('Failed to extract prizes from Louisiana Lottery: ' . $e->getMessage());
     }
+    
+    return $prizes;
+}
+
+
+    
 }
