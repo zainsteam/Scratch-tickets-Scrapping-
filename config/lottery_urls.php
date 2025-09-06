@@ -121,6 +121,18 @@ return [
             'active' => true,
         ],
         
+        'minnesota' => [
+            'name' => 'Minnesota Lottery',
+            'base_url' => 'https://www.mnlottery.com',
+            'domains' => ['mnlottery.com', 'www.mnlottery.com'],
+            'urls' => [
+                'games_list' => 'https://www.mnlottery.com/games/scratch',
+                'game_detail_pattern' => 'https://www.mnlottery.com/games/scratch/{game_id}',
+                'api_endpoint' => null,
+            ],
+            'active' => true,
+        ],
+        
         'new_jersey' => [
             'name' => 'New Jersey Lottery',
             'base_url' => 'https://www.njlottery.com',

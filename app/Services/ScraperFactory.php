@@ -14,6 +14,8 @@ use App\Services\Scrapers\KansasLotteryScraper;
 use App\Services\Scrapers\KentuckyLotteryScraper;
 use App\Services\Scrapers\LouisianaLotteryScraper;
 use App\Services\Scrapers\MississippiLotteryScraper;
+use App\Services\Scrapers\MichiganLotteryScraper;
+use App\Services\Scrapers\MinnesotaLotteryScraper;
 use App\Services\Scrapers\NewJerseyLotteryScraper;
 use App\Services\Scrapers\NorthCarolinaLotteryScraper;
 use App\Services\Scrapers\SouthCarolinaLotteryScraper;
@@ -40,6 +42,8 @@ class ScraperFactory
             new KentuckyLotteryScraper(),
             new LouisianaLotteryScraper(),
             new MississippiLotteryScraper(),
+            new MichiganLotteryScraper(),
+            new MinnesotaLotteryScraper(),
             new NewJerseyLotteryScraper(),
             new NorthCarolinaLotteryScraper(),
             new SouthCarolinaLotteryScraper(),
